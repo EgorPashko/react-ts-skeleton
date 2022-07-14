@@ -9,10 +9,13 @@
     "lint": "eslint . --ext .ts"
   },
   "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@mui/material": "^5.9.0",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
     "@types/node": "^16.7.13",
-    "@types/react": "^18.0.0",
+    "@types/react": "^18.0.4",
     "@types/react-dom": "^18.0.0",
     "antd": "^4.21.5",
     "axios": "^0.27.2",
@@ -21,10 +24,16 @@
     "i18next-browser-languagedetector": "^6.1.0",
     "locales": "link:./public/locales",
     "lodash": "^4.17.21",
+    "mobx": "^6.3.9",
+    "mobx-devtools-mst": "^0.9.30",
+    "mobx-react": "^7.2.1",
+    "mobx-react-devtools": "^6.1.1",
+    "mobx-react-lite": "^3.2.2",
+    "mobx-state-tree": "^5.1.0",
     "prettier": "^2.7.1",
     "qs": "^6.11.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "react-hook-form": "^7.33.1",
     "react-i18next": "11.8.15",
     "react-query": "^3.39.1",
@@ -49,6 +58,9 @@
     "eslint-plugin-sonarjs": "^0.9.1",
     "eslint-plugin-unicorn": "^37.0.1",
     "eslint-plugin-unused-imports": "^1.1.2"
+  },
+  "resolutions": {
+    "react-i18next": ">=11.16.4"
   },
   "eslintConfig": {
     "extends": [
