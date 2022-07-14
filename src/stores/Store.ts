@@ -1,20 +1,28 @@
-import { flow } from "lodash";
-import { cast, types } from "mobx-state-tree";
+import { cast, flow, types } from "mobx-state-tree";
 
+import { api } from "../lib/api/api";
 import type { User } from "../lib/api/models";
-import { userApi } from "../lib/api/user";
+import { asyncSuspense } from "../lib/asyncSuspense";
+import { sleep } from "../lib/sleep";
 import { UserStore } from "./UserStore";
 
-const Store = types
+export const Store = types
   .model("Store", {
     user: types.maybeNull(UserStore),
   })
   .actions((self) => ({
+    setUser: (user: User | undefined) => {
+      self.user = cast(user);
+    },
+  }))
+  .actions((self) => ({
     loadUser: flow(function* () {
-      const user: User = yield userApi.get(123);
+      // imitate real work with BE
+      yield sleep(1000);
+      const user: User = yield api.getUserById(333);
 
       if (user) {
-        self.user = cast(user);
+        self.setUser(user);
       }
     }),
   }));
@@ -22,3 +30,9 @@ const Store = types
 const store = Store.create({});
 
 export const useStore = () => store;
+
+export const initializeStore = asyncSuspense(async () => {
+  await store.loadUser();
+
+  return store;
+}, "store");
