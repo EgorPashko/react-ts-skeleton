@@ -1,0 +1,9 @@
+coverage
+build
+.vscode
+.yarn
+node_modules
+config/**/*.js
+scripts/**/*.js
+jest.config.js
+
