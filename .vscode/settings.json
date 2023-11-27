@@ -8,13 +8,11 @@
   "editor.showFoldingControls": "always",
   "editor.folding": true,
   "editor.foldingStrategy": "indentation",
-  "typescript.tsdk": ".yarn/sdks/typescript/lib",
   "search.exclude": {
     "**/.yarn": true,
     "**/.pnp.*": true
   },
-  "eslint.nodePath": ".yarn/sdks",
-  "prettier.prettierPath": ".yarn/sdks/prettier/index.js",
+  "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "i18n-ally.localesPaths": "public/locales",
   "i18n-ally.keystyle": "nested",

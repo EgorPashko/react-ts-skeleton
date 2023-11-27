@@ -40,6 +40,7 @@ module.exports = {
     "sort-imports": "off",
     "import/order": "off",
     "linebreak-style": "off",
+    "react/no-unknown-property": ["error", { ignore: ["css"] }],
     "react/prop-types": "off",
     "react/jsx-props-no-spreading": "off",
     "jsx-a11y/anchor-is-valid": "off",
@@ -58,6 +59,40 @@ module.exports = {
       "error",
       {
         noUselessIndex: true,
+      },
+    ],
+    "no-restricted-imports": [
+      "error",
+      {
+        paths: [
+          "antd",
+          "lib/swagger/generated",
+          {
+            name: "react",
+            importNames: ["FC"],
+            message: "Write Function Components as regular functions with props.",
+          },
+          {
+            name: "react-hook-form",
+            importNames: ["useForm"],
+            message: "Import from components/Form",
+          },
+          {
+            name: "@emotion/css",
+            importNames: ["css"],
+            message: "Import from @emotion/react.",
+          },
+        ],
+        patterns: [
+          "antd/*",
+          "rc-table/*",
+          "components/Form/*",
+          "models/*",
+          "components/Table/*",
+          "components/Calendar/*",
+          "lib/api/responses",
+          "../../*",
+        ],
       },
     ],
     "@typescript-eslint/no-explicit-any": "error",
