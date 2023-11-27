@@ -19,5 +19,5 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src", "public/locales", ".eslintrc.js"]
+  "include": ["src", "public/locales", "src/modules/.eslintrc.js"]
 }

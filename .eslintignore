@@ -7,3 +7,5 @@ config/**/*.js
 scripts/**/*.js
 jest.config.js
 
+.config-overrides.js
+config-overrides.js
